@@ -1,5 +1,7 @@
 package ec.edu.ups.poo.clases;
 
+import ec.edu.ups.poo.Models.Producto;
+
 public class Licencia extends Producto {
 
     private String descripcion;

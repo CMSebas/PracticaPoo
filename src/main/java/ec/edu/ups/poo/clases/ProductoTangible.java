@@ -1,5 +1,7 @@
 package ec.edu.ups.poo.clases;
 
+import ec.edu.ups.poo.Models.Producto;
+
 public class ProductoTangible extends Producto {
     private int valUnitario;
     public ProductoTangible() {}

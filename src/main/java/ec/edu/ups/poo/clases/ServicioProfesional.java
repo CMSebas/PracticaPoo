@@ -1,5 +1,7 @@
 package ec.edu.ups.poo.clases;
 
+import ec.edu.ups.poo.Models.Producto;
+
 public class ServicioProfesional extends Producto {
 
     private int horasEstimadas;

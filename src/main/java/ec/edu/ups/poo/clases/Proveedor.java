@@ -1,5 +1,7 @@
 package ec.edu.ups.poo.clases;
 
+import ec.edu.ups.poo.Models.Persona;
+
 public class Proveedor extends Persona {
     private String ruc;
     private String empresa;

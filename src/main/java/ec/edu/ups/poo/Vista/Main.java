@@ -1,4 +1,4 @@
-package ec.edu.ups.poo;
+package ec.edu.ups.poo.Vista;
 
 public class Main {
     public static void main(String[] args) {

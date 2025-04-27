@@ -1,4 +1,6 @@
-package ec.edu.ups.poo.clases;
+package ec.edu.ups.poo.Models;
+import ec.edu.ups.poo.clases.Proveedor;
+
 import java.util.List;
 
 public abstract class Producto {
