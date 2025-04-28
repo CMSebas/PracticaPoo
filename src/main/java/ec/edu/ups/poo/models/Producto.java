@@ -1,21 +1,24 @@
-package ec.edu.ups.poo.clases;
+package ec.edu.ups.poo.models;
+import java.util.ArrayList;
 import java.util.List;
+import  ec.edu.ups.poo.models.Proveedor;
 
-public abstract class Producto {
+public abstract class Producto implements Calculable {
     private int id;
     private String nombre;
-    private int precio;
     private int cantidad;
-    private List<Proveedor> proveedores;
+    private List<Proveedor> provedores;
 
-    public Producto() {}
 
-    public Producto(int id, List<Proveedor> proveedores, int cantidad, int precio, String nombre) {
+    public Producto() {
+    }
+
+    public Producto(int id, int cantidad, String nombre) {
         this.id = id;
-        this.proveedores = proveedores;
+
         this.cantidad = cantidad;
-        this.precio = precio;
         this.nombre = nombre;
+        this.provedores = new ArrayList<>();
     }
 
     public int getId() {
@@ -26,13 +29,6 @@ public abstract class Producto {
         this.id = id;
     }
 
-    public List<Proveedor> getProveedores() {
-        return proveedores;
-    }
-
-    public void setProveedores(List<Proveedor> proveedores) {
-        this.proveedores = proveedores;
-    }
 
     public int getCantidad() {
         return cantidad;
@@ -40,14 +36,6 @@ public abstract class Producto {
 
     public void setCantidad(int cantidad) {
         this.cantidad = cantidad;
-    }
-
-    public int getPrecio() {
-        return precio;
-    }
-
-    public void setPrecio(int precio) {
-        this.precio = precio;
     }
 
     public String getNombre() {
@@ -58,14 +46,26 @@ public abstract class Producto {
         this.nombre = nombre;
     }
 
+    public void agregarProveedor(Proveedor proveedor) {
+        provedores.add(proveedor);
+    }
+
+    public abstract double calcularSubtotal();
+
+    @Override
+    public double calcularSubTotalConIva() {
+        return calcularSubtotal()*1.12;
+    }
+
     @Override
     public String toString() {
         return "Producto{" +
                 "id=" + id +
                 ", nombre='" + nombre + '\'' +
-                ", precio=" + precio +
                 ", cantidad=" + cantidad +
-                ", proveedores=" + proveedores +
+                ", provedores:" + provedores +
                 '}';
     }
+
+
 }

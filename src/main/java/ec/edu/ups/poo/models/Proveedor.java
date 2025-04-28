@@ -1,4 +1,4 @@
-package ec.edu.ups.poo.clases;
+package ec.edu.ups.poo.models;
 
 public class Proveedor extends Persona {
     private String ruc;
@@ -31,7 +31,7 @@ public class Proveedor extends Persona {
 
     @Override
     public String toString() {
-        return "Proveedor{" +
+        return super.toString()+"Proveedor{" +
                 "ruc='" + ruc + '\'' +
                 ", empresa='" + empresa + '\'' +
                 '}';
