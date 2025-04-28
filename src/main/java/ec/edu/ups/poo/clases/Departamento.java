@@ -1,5 +1,7 @@
 package ec.edu.ups.poo.clases;
 
+import ec.edu.ups.poo.models.Empleado;
+
 import java.util.List;
 
 public class Departamento {

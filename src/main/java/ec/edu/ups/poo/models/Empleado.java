@@ -1,13 +1,13 @@
-package ec.edu.ups.poo.clases;
+package ec.edu.ups.poo.models;
 
 import ec.edu.ups.poo.enums.Cargo;
 
-public class Empleado {
+public class Empleado extends Persona {
     private Cargo cargo;
-
     public Empleado() {}
 
-    public Empleado(Cargo cargo) {
+    public Empleado(int id, String nombre, Cargo cargo) {
+        super(id, nombre);
         this.cargo = cargo;
     }
 
@@ -21,10 +21,8 @@ public class Empleado {
 
     @Override
     public String toString() {
-        return "Empleado{" +
+        return super.toString()+"Empleado{" +
                 "cargo=" + cargo +
                 '}';
     }
-
-
-    }
+}

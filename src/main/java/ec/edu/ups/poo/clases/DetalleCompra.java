@@ -1,6 +1,7 @@
 package ec.edu.ups.poo.clases;
 
-import ec.edu.ups.poo.Models.Producto;
+import ec.edu.ups.poo.models.Producto;
+import ec.edu.ups.poo.models.Proveedor;
 
 import java.util.List;
 

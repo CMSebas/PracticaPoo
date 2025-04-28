@@ -1,5 +1,6 @@
 
 package ec.edu.ups.poo.clases;
+import ec.edu.ups.poo.models.Empleado;
 import ec.edu.ups.poo.enums.Cargo;
 
 import java.util.GregorianCalendar;
