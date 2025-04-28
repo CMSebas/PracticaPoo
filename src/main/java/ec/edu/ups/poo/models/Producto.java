@@ -1,20 +1,18 @@
-package ec.edu.ups.poo.clases;
+package ec.edu.ups.poo.models;
 import java.util.List;
 
 public abstract class Producto {
     private int id;
     private String nombre;
-    private int precio;
     private int cantidad;
-    private List<Proveedor> proveedores;
+
 
     public Producto() {}
 
-    public Producto(int id, List<Proveedor> proveedores, int cantidad, int precio, String nombre) {
+    public Producto(int id, int cantidad, String nombre) {
         this.id = id;
-        this.proveedores = proveedores;
+
         this.cantidad = cantidad;
-        this.precio = precio;
         this.nombre = nombre;
     }
 
@@ -26,13 +24,7 @@ public abstract class Producto {
         this.id = id;
     }
 
-    public List<Proveedor> getProveedores() {
-        return proveedores;
-    }
 
-    public void setProveedores(List<Proveedor> proveedores) {
-        this.proveedores = proveedores;
-    }
 
     public int getCantidad() {
         return cantidad;
@@ -40,14 +32,6 @@ public abstract class Producto {
 
     public void setCantidad(int cantidad) {
         this.cantidad = cantidad;
-    }
-
-    public int getPrecio() {
-        return precio;
-    }
-
-    public void setPrecio(int precio) {
-        this.precio = precio;
     }
 
     public String getNombre() {
@@ -58,14 +42,14 @@ public abstract class Producto {
         this.nombre = nombre;
     }
 
+    public abstract double calcularSubtotal();
+
     @Override
     public String toString() {
         return "Producto{" +
                 "id=" + id +
                 ", nombre='" + nombre + '\'' +
-                ", precio=" + precio +
                 ", cantidad=" + cantidad +
-                ", proveedores=" + proveedores +
                 '}';
     }
 }

@@ -1,4 +1,4 @@
-package ec.edu.ups.poo.clases;
+package ec.edu.ups.poo.models;
 public class Persona {
     // Atributos
 
