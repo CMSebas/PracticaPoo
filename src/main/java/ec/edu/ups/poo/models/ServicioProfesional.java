@@ -53,10 +53,10 @@ public class ServicioProfesional extends Producto {
 
     @Override
     public String toString() {
-        return super.toString()+"ServicioProfesional{" +
-                "tarifaFija=" + tarifaFija +
-                ", horasNecesarias=" + horasNecesarias +
-                ", tipoServicioProfesional='" + tipoServicioProfesional + '\'' +
+        return super.toString()+
+                "La tarifa fija es:" + tarifaFija +
+                ", Horas necesarias=" + horasNecesarias +
+                ", tipo de Servicio Profesional='" + tipoServicioProfesional + '\'' +
                 '}';
     }
 }

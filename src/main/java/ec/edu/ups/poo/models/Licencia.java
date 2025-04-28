@@ -22,13 +22,11 @@ public class Licencia extends Producto {
 
     @Override
     public String toString() {
-        return super.toString()+"Licencia{" +
+        return super.toString() +
                 ", descrpcion=" + descripcion +
-                ", valSuscripcion=" + valSuscripcion +
+                ", valor de la suscripcion mensual=" + valSuscripcion +
                 '}';
     }
 
 
 }
-
-

@@ -43,8 +43,11 @@ public class SolicitudCompra {
         this.solicitante = solicitante;
     }
 
-    public void agregarDetalle(Producto producto, String observaciones) {
-        DetalleCompra detalle = new DetalleCompra(producto, observaciones);
+    public void agregarDetalle(List<Producto> productos, String observaciones) {
+        DetalleCompra detalle = new DetalleCompra(observaciones);
+        for (Producto producto : productos) {
+            detalle.agregarProducto(producto);  // Agregar producto al detalle
+        }// Se pasa la lista de productos
         detalles.add(detalle);
     }
 
@@ -58,11 +61,10 @@ public class SolicitudCompra {
 
     @Override
     public String toString() {
-        return "SolicitudCompra{" +
-                "estado=" + estadoSolicitud +
-                ", fechaSolicitud=" + fechaSolicitud.getTime() + // Para mostrar la fecha correctamente
-                ", detalles=" + detalles +
-                ", solicitante=" + solicitante +
-                '}';
+        return "Solicitud"  +
+                "estado de la solicitud:" + estadoSolicitud +
+                ", fecha de la solitud emitida=" + fechaSolicitud.getTime() +
+                ", detalles:" + detalles +
+                ", solicitante:" + solicitante ;
     }
 }

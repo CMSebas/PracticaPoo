@@ -2,7 +2,7 @@ package ec.edu.ups.poo.enums;
 
 public enum EstadoSolicitud {
     SOLICITADA,
-    EN_RESVISION,
+    EN_REVISION,
     APROBADA,
     RECHAZADA,
 }

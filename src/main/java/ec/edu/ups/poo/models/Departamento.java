@@ -27,7 +27,7 @@ public class Departamento {
     @Override
     public String toString() {
         return "Departamento{" +
-                "nombre='" + nombre + '\'' +
+                "nombre del producto='" + nombre + '\'' +
                 ", empleados=" + empleados +
                 '}';
     }

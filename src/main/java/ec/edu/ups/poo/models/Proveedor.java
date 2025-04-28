@@ -31,8 +31,8 @@ public class Proveedor extends Persona {
 
     @Override
     public String toString() {
-        return super.toString()+"Proveedor{" +
-                "ruc='" + ruc + '\'' +
+        return super.toString() +
+                "Ruc del Proveedor:'" + ruc + '\'' +
                 ", empresa='" + empresa + '\'' +
                 '}';
     }

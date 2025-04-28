@@ -22,13 +22,13 @@ public class ProductoTangible extends Producto {
 
     @Override
     public double calcularSubtotal() {
-    return precioUnitario*getCantidad();
+        return precioUnitario*getCantidad();
     }
 
     @Override
     public String toString() {
-        return super.toString()+"ProductoTangible{" +
-                "precioUnitario=" + precioUnitario +
-                '}';
+        return super.toString() +
+                "precio por unidad=" + precioUnitario
+                ;
     }
 }

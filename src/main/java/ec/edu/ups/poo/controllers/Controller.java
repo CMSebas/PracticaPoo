@@ -50,21 +50,25 @@ public class Controller {
                 case 6:
                     listarSolicitudes();
                     break;
-                    case 7:
-                        buscarProvedor();
+                case 7:
+                    buscarProvedor();
+                    break;
+                case 8:
+                    buscarProducto();
+                    break;
+                case 9:
+                    buscarSolicitud();
+                    break;
+                case 10:
+                    estadoSolicitud();
+                    break;
+                case 11:
+                    calcularTotalSolicitud();
+                    break;
+                    case 12:
+                        begin=false;
                         break;
-                        case 8:
-                            buscarProducto();
-                            break;
-                            case 9:
-                                buscarSolicitud();
-                                break;
-                                case 10:
-                                    estadoSolicitud();
-                                    break;
-                                    case 11:
-                                        calcularTotalSolicitud();
-                                        break;
+                        default:
 
             }
 
@@ -184,7 +188,7 @@ public class Controller {
         System.out.println("2.No");
         int opcion=leer.nextInt();
         if (opcion == 1) {
-                addProducto(nuevoProveedor);
+            addProducto(nuevoProveedor);
         }
 
 
@@ -260,24 +264,24 @@ public class Controller {
     public void registrarSolicitudCompra(Empleado empleado) {
         Scanner leer = new Scanner(System.in);
 
-        // Por ahora, supondremos un empleado solicitante ficticio
         Empleado solicitante = empleado;
 
-        // Crear nueva solicitud
+
         SolicitudCompra nuevaSolicitud = new SolicitudCompra(solicitante);
+        empleado.agregarSolicitud(nuevaSolicitud);
 
         boolean agregarMasDetalles = true;
         while (agregarMasDetalles) {
-            // Mostrar productos disponibles
+
             System.out.println("Productos disponibles:");
             for (Producto producto : productos) {
                 System.out.println(producto.getId() + " - " + producto.getNombre());
             }
 
-            // Seleccionar producto
+
             System.out.println("Ingrese el ID del producto que desea agregar:");
             int idProducto = leer.nextInt();
-            leer.nextLine(); // Limpiar buffer
+            leer.nextLine();
 
             Producto productoSeleccionado = null;
             for (Producto p : productos) {
@@ -292,8 +296,7 @@ public class Controller {
                 System.out.println("Ingrese observaciones:");
                 String observaciones = leer.nextLine();
 
-                // Crear y agregar detalle (composición)
-                nuevaSolicitud.agregarDetalle(productoSeleccionado, observaciones);
+                nuevaSolicitud.agregarDetalle(productos, observaciones);
             } else {
                 System.out.println("Producto no encontrado.");
             }
@@ -305,7 +308,7 @@ public class Controller {
             agregarMasDetalles = (opcion == 1);
         }
 
-        // Agregar solicitud a la lista de solicitudes
+
         solicitudes.add(nuevaSolicitud);
 
         System.out.println("Solicitud creada exitosamente:");
@@ -324,7 +327,7 @@ public class Controller {
 
         System.out.println("Nuevo departamento creado: " + nombreDepto);
 
-        // Ahora crea Empleado con el Departamento incluido
+
         Empleado empleado = new Empleado(idEmpleado, nombreEmpleado, cargo, departamento);
         departamento.agregarEmpleado(empleado);
 
@@ -337,7 +340,7 @@ public class Controller {
         System.out.println("\nSolicitudes registradas:");
         for (SolicitudCompra solicitud : solicitudes) {
             System.out.println("-----------------------------------");
-            System.out.println(solicitud); // Usa el toString() de SolicitudCompra
+            System.out.println(solicitud);
         }
     }
 
@@ -380,7 +383,7 @@ public class Controller {
             }else if (opcion == 2) {
                 solicitudEncontrada.setEstadoSolicitud(EstadoSolicitud.RECHAZADA);
             }else {
-                solicitudEncontrada.setEstadoSolicitud(EstadoSolicitud.EN_RESVISION);
+                solicitudEncontrada.setEstadoSolicitud(EstadoSolicitud.EN_REVISION);
             }
 
 
@@ -399,10 +402,10 @@ public class Controller {
         System.out.println("\nSolicitudes registradas:");
         for (SolicitudCompra solicitud : solicitudes) {
             System.out.println("-----------------------------------");
-            System.out.println(solicitud); // Usa el toString() de SolicitudCompra
+            System.out.println(solicitud);
         }
 
-        int num = view.numSolitud(); // pedir número de solicitud
+        int num = view.numSolitud();
         int indice = num - 1;
 
         if (indice >= 0 && indice < solicitudes.size()) {

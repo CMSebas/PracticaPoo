@@ -27,7 +27,7 @@ public class View {
             System.out.println("10. Aprobar/Rechazar Solicitud");
             System.out.println("11. Calcular total de una solicitud");
             System.out.println("12. Salir");
-            System.out.print("Seleccione una opción (1-6): ");
+            System.out.print("Seleccione una opción (1-12): ");
             option = leer.nextInt();
         } while (option < 1 || option > 12);
 
@@ -117,7 +117,7 @@ public class View {
     }
 
     public String ingresarNombreProveedor() {
-        System.out.println("Ingrese el nombre: ");
+        System.out.println("Ingrese el nombre del proveedor: ");
         String nombreProveedor = leer.nextLine();
         return nombreProveedor;
 
@@ -145,14 +145,14 @@ public class View {
     }
 
     public String ingresaNombreEmpleado() {
-        System.out.println("Ingrese su nombre: ");
+        System.out.println("Ingrese su nombre como Empleado : ");
         String nombreEmpleado = leer.next();
         leer.nextLine();
         return nombreEmpleado;
     }
 
     public int ingresaIdEmpleado() {
-        System.out.println("Ingrese el id: ");
+        System.out.println("Ingrese su id: ");
         int idEmpleado = leer.nextInt();
         leer.nextLine();
         return idEmpleado;

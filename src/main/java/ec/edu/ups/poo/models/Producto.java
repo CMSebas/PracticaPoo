@@ -59,11 +59,11 @@ public abstract class Producto implements Calculable {
 
     @Override
     public String toString() {
-        return "Producto{" +
-                "id=" + id +
-                ", nombre='" + nombre + '\'' +
-                ", cantidad=" + cantidad +
-                ", provedores:" + provedores +
+        return
+                "id del producto:" + id +
+                ", nombre del producto:'" + nombre +
+                ", cantidad solicitada:" + cantidad +
+                ", provedores del producto:" + provedores +
                 '}';
     }
 
